@@ -10,7 +10,7 @@
 #include <vector>
 #include <cctype>
 
- using namespace std;
+using namespace std;
 
  int main() {
  	vector<int> v;
