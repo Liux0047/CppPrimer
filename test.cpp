@@ -5,9 +5,10 @@ using namespace std;
 
 int main() {
 	
-	void *vp = nullptr;
-	long long *ip = nullptr;
+	const int i = 5;
+	const int &a = i;	
+	int nc = i;
 
-	cout << sizeof vp << endl;
-	cout << sizeof *ip << endl;
+	const int* ip = &i;
+	// int* p = &i;
 }
