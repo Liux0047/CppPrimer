@@ -1,12 +1,13 @@
 #include <iostream>
 #include <string>
 
-using std::string;
-using std::cout;
+using namespace std;
 
 int main() {
-	string s {"a"};
-	auto len = s.size();
+	
+	void *vp = nullptr;
+	long long *ip = nullptr;
 
-	cout << s << len;
+	cout << sizeof vp << endl;
+	cout << sizeof *ip << endl;
 }
