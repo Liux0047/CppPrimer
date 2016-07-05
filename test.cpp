@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 	
-	const int i = 5;
+	int i = 5;
 	const int &a = i;	
 	int nc = i;
 
