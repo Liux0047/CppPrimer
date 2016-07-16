@@ -1,0 +1,12 @@
+Sharing Data between Classes
+Our QueryResult class is intended to represent the results of a query. 
+Those results include the set of line numbers associated with the given word and the corresponding lines of text from the input file. 
+These data are stored in objects of type TextQuery.
+Because the data that a QueryResult needs are stored in a TextQuery object, we have to decide how to access them. 
+We could copy the set of line numbers, but that might be an expensive operation. 
+Moreover, we certainly wouldn’t want to copy the vector, because that would entail copying the entire file in order to print (what will usually be) a small subset of the file.
+We could avoid making copies by returning iterators (or pointers) into the TextQuery object. 
+However, this approach opens up a pitfall: What happens if the TextQuery object is destroyed before a corresponding QueryResult? In that case, the QueryResult would refer to data in an object that no longer exists.
+This last observation about synchronizing the lifetime of a QueryResult with the TextQuery object whose results it represents suggests a solution to our design problem. 
+Given that these two classes conceptually “share” data, we’ll use shared_ptrs (§ 12.1.1, p. 
+450) to reflect that sharing in our data structures.
