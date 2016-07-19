@@ -12,7 +12,7 @@ using std::size_t;
 class HasPtr {
 public:
 	HasPtr(const string &s = string()): ps(new string(s)), i(0), use(new size_t(1)) { }
-	HasPtr(HasPtr &hp) : ps (hp.ps), i (hp.i), use(hp.use){
+	HasPtr(const HasPtr &hp) : ps (hp.ps), i (hp.i), use(hp.use){
 		++*use;
 	}
 	HasPtr& operator=(const HasPtr &hp) {
