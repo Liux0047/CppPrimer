@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <memory>
 
 using namespace std;
 
@@ -24,4 +25,9 @@ int main() {
 	while (ab != end(a)){
 		cout << *ab++ << " ";
 	}
+	cout << endl;
+
+	shared_ptr<int> sptr = make_shared<int>(1);
+	auto p2 = sptr;
+	cout << sptr.use_count();
 }

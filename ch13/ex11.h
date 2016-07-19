@@ -1,10 +1,9 @@
 /*
-Write the assignment operator for the HasPtr class from exercise 13.5 in § 13.1.1 (p. 499). 
-As with the copy constructor, your assignment operator should copy the object to which ps points.
+Add a destructor to your HasPtr class from the previous exercises.
 */
 
-#ifndef CH13_EX8_H
-#define CH13_EX8_H
+#ifndef CH13_EX11_H
+#define CH13_EX11_H
 
 #include <string>
 using std::string;
@@ -19,6 +18,9 @@ public:
 		string *new_ps = new string(*hp.ps);
 		ps = new_ps;
 		return *this;
+	}
+	~HasPtr() {
+		delete ps;
 	}
 private:
 	string *ps;
